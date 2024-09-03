@@ -22,7 +22,6 @@ function App() {
         console.log(event)
         const parsedEvent = JSON.parse(event.data)
         setData({ flag: parsedEvent.flag, message: parsedEvent.message })
-        // eventSource.close();
       });
 
       eventSource.addEventListener("close", (event) => {
