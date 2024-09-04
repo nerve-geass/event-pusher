@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import "../node_modules/flag-icons/css/flag-icons.min.css"
 
 function App() {
-
   const [data, setData] = useState<{ message: string, flag: string } | null>(null)
   const clock = `${(new Date).toLocaleString('it-IT')} IT`
   const [italianClock, setItalianClock] = useState(clock)
   const baseURL = "http://localhost:3000";
-  const eventSource = new EventSource(`${baseURL}/sse`);
+  const eventSource = new EventSource(`${baseURL}/sse`)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +53,7 @@ function App() {
 
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
